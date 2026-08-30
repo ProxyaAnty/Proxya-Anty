@@ -4,6 +4,11 @@
   <img src="public/icon.png" width="112" height="112" alt="Proxya Anty logo">
 </p>
 
+<p align="center">
+  <strong><a href="https://github.com/ProxyaAnty/Proxya-Anty/releases/latest">Download Proxya Anty</a></strong><br>
+  Windows x64 · macOS Apple Silicon
+</p>
+
 **Antidetect browser for stable multi-account automation — source-patched
 Chromium, 168 coherent device fingerprints, proxy-aware profiles, desktop app,
 Node.js and Python SDKs, MCP server, and Docker.**
@@ -41,7 +46,24 @@ API.
 
 The release engine is tested on public detection pages and with local
 regression suites. Results describe this exact release, not a universal promise
-about every future website.
+about every future website. **Last tested: 29 August 2026 (Chromium 152).**
+
+### Live detection services
+
+| Detection service or signal | Proxya Anty 1.0.0 | Verification notes |
+|---|---|---|
+| [PixelScan](https://pixelscan.net/fingerprint-check) | **PASS** — consistent fingerprint; no automated behavior detected | Windows profile with matching proxy timezone |
+| [BrowserScan](https://www.browserscan.net/) | **PASS** — bot detection: No | Authenticity score also depends on IP, DNS and timezone consistency |
+| [SannySoft](https://bot.sannysoft.com/) | **PASS** — 55/55 checks clean | Windows and macOS; Linux exposes 54 applicable checks, all clean |
+| [CreepJS](https://abrahamjuliot.github.io/creepjs/) | **PASS** — 0% headless, 0% stealth | Compared with stock Chrome on the same host |
+| [Device & Browser Info](https://deviceandbrowserinfo.com/are_you_a_bot) | **PASS** — `isBot: false` | Runtime/CDP guard enabled |
+| [Cloudflare Turnstile](https://peet.ws/turnstile-test/non-interactive.html) | **PASS** | No solver, token injection or iframe modification; see the recording below |
+| [FingerprintJS OSS](https://fingerprintjs.github.io/fingerprintjs/) | Profile stability check | Visitor ID is checked for stability inside a profile and isolation between profiles |
+| `navigator.webdriver` | **`false`** | Windows, macOS and Linux |
+| `navigator.plugins.length` | **`5`** | Native Chromium plugin list |
+| WebRTC | **No local-address leak** | Public candidate follows the configured proxy |
+
+### Release regression suites
 
 | Check | Result |
 |---|---:|
@@ -52,9 +74,6 @@ about every future website.
 | Node.js SDK | 19 / 19 |
 | Python SDK | 20 / 20 |
 | Rust launcher tests | 123 / 123 |
-
-Public checks include BrowserScan, PixelScan, CreepJS, SannySoft,
-DeviceAndBrowserInfo, IPHey, WebRTC and FingerprintJS OSS.
 
 ### Cloudflare Turnstile test
 
