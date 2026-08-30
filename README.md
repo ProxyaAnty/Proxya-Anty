@@ -4,6 +4,11 @@
   <img src="public/icon.png" width="112" height="112" alt="Proxya Anty logo">
 </p>
 
+<p align="center">
+  <strong><a href="https://github.com/ProxyaAnty/Proxya-Anty/releases/latest">Download Proxya Anty</a></strong><br>
+  Windows x64 · macOS Apple Silicon
+</p>
+
 **Antidetect browser for stable multi-account automation — source-patched
 Chromium, 168 coherent device fingerprints, proxy-aware profiles, desktop app,
 Node.js and Python SDKs, MCP server, and Docker.**
