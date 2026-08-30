@@ -60,7 +60,7 @@ about every future website. **Last tested: 29 August 2026 (Chromium 152).**
 | [Cloudflare Turnstile](https://peet.ws/turnstile-test/non-interactive.html) | **PASS** | No solver, token injection or iframe modification; see the recording below |
 | [FingerprintJS OSS](https://fingerprintjs.github.io/fingerprintjs/) | Profile stability check | Visitor ID is checked for stability inside a profile and isolation between profiles |
 | `navigator.webdriver` | **`false`** | Windows, macOS and Linux |
-| `navigator.plugins.length` | **`5`** | Native Chromium plugin list |
+| reCAPTCHA v3 score | **0.9** | Human score |
 | WebRTC | **No local-address leak** | Public candidate follows the configured proxy |
 
 ### Release regression suites
