@@ -1,0 +1,57 @@
+name: Detection or SDK regression
+description: Report a reproducible problem without posting credentials or account data.
+title: "[Bug]: "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not include cookies, proxy credentials, Local API tokens or account data.
+        Security vulnerabilities must be reported privately through https://proxya.co/contact.
+  - type: input
+    id: version
+    attributes:
+      label: Proxya Anty version
+      placeholder: 1.0.0
+    validations:
+      required: true
+  - type: dropdown
+    id: host
+    attributes:
+      label: Host platform
+      options: [Windows x64, macOS Apple Silicon, Linux x64 / Docker]
+    validations:
+      required: true
+  - type: dropdown
+    id: profile
+    attributes:
+      label: Profile OS
+      options: [Windows, macOS, Linux, Not applicable]
+    validations:
+      required: true
+  - type: input
+    id: site
+    attributes:
+      label: Affected site or SDK method
+      placeholder: Public URL or method name; no private session links
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction
+      description: Minimal steps, expected result and actual result.
+    validations:
+      required: true
+  - type: dropdown
+    id: proxy
+    attributes:
+      label: Proxy used
+      options: [No proxy, Datacenter, ISP, Residential, Mobile, Other]
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety check
+      options:
+        - label: I removed all tokens, cookies, proxy credentials and personal data.
+          required: true

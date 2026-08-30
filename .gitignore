@@ -1,0 +1,11 @@
+node_modules/
+__pycache__/
+*.pyc
+dist/
+*.egg-info/
+.venv/
+*.tgz
+.DS_Store
+
+# Приватный каталог устройств не входит ни в одну публичную обёртку.
+sdk/*/devices.json

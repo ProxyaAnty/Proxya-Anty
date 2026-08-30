@@ -1,0 +1,47 @@
+{
+  "name": "proxya-anty-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for Proxya Anty: drives the launcher's local API and a launched profile's browser over DevTools.",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "anti-detect",
+    "antidetect",
+    "browser",
+    "fingerprint",
+    "automation",
+    "playwright",
+    "cdp"
+  ],
+  "homepage": "https://proxya.co/anty",
+  "bugs": {
+    "url": "https://github.com/ProxyaAnty/Proxya-Anty/issues"
+  },
+  "license": "MIT",
+  "author": "Proxya",
+  "type": "module",
+  "bin": {
+    "proxya-anty-mcp": "index.js"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "files": [
+    "index.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.4.0",
+    "playwright-core": "^1.49.0",
+    "zod": "^3.23.8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ProxyaAnty/Proxya-Anty.git",
+    "directory": "mcp"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "name": "proxya-anty",
+  "version": "1.0.0",
+  "description": "Authenticated Node.js SDK for Proxya Anty profiles, proxies, cookies and browser sessions.",
+  "keywords": [
+    "anti-detect",
+    "antidetect",
+    "browser",
+    "fingerprint",
+    "puppeteer",
+    "playwright",
+    "cdp",
+    "automation",
+    "scraping",
+    "proxy"
+  ],
+  "homepage": "https://proxya.co/anty",
+  "bugs": {
+    "url": "https://github.com/ProxyaAnty/Proxya-Anty/issues"
+  },
+  "license": "MIT",
+  "author": "Proxya",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "main": "./index.mjs",
+  "exports": {
+    ".": "./index.mjs",
+    "./cdpguard": "./cdpguard.mjs"
+  },
+  "files": [
+    "index.mjs",
+    "cdpguard.mjs",
+    "README.md",
+    "LICENSE"
+  ],
+  "dependencies": {},
+  "peerDependencies": {
+    "playwright": "*",
+    "puppeteer-core": "*"
+  },
+  "peerDependenciesMeta": {
+    "playwright": {
+      "optional": true
+    },
+    "puppeteer-core": {
+      "optional": true
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ProxyaAnty/Proxya-Anty.git",
+    "directory": "sdk/node"
+  }
+}
