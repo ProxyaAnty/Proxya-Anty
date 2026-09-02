@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "proxya-anty"
-version = "1.0.0"
+version = "1.0.1"
 description = "Control the Proxya Anty desktop application from Python."
 readme = "README.md"
 license = { file = "LICENSE" }
@@ -35,5 +35,7 @@ only-include = ["proxya_anty.py"]
 sources = ["."]
 
 [tool.hatch.build.targets.sdist]
+# Hatchling's standard sdist always includes the nearest .gitignore and does
+# not allow excluding it. The export creates a public-safe one at repository
+# root, and the boundary scan below validates its contents with every file.
 include = ["proxya_anty.py", "pyproject.toml", "README.md", "LICENSE"]
-exclude = ["/.gitignore"]

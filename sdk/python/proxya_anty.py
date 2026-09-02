@@ -159,6 +159,48 @@ class ProxyaAnty:
     def running(self) -> list[dict]:
         return self._call("/running")
 
+    # ---------------------------------------------------- persistent job queue
+
+    def queue_status(self) -> dict:
+        return self._call("/jobs/status")
+
+    def jobs(self, status: str | None = None, limit: int = 200) -> list[dict]:
+        query = f"?limit={max(1, min(2000, limit))}"
+        if status:
+            from urllib.parse import quote
+
+            query += f"&status={quote(status)}"
+        return self._call(f"/jobs{query}")
+
+    def enqueue_job(self, **spec: Any) -> dict:
+        """Persist a scheduled launch/warm-up. Thousands of these are rows in
+        the local queue; only the configured number of browsers run at once."""
+        return self._call("/jobs", "POST", spec)
+
+    def job(self, job_id: str) -> dict:
+        return self._call(f"/jobs/{job_id}")
+
+    def cancel_job(self, job_id: str) -> dict:
+        return self._call(f"/jobs/{job_id}/cancel", "POST")
+
+    def delete_job(self, job_id: str) -> dict:
+        return self._call(f"/jobs/{job_id}", "DELETE")
+
+    def wait_job(
+        self,
+        job_id: str,
+        poll_seconds: float = 0.5,
+        timeout_seconds: float | None = None,
+    ) -> dict:
+        started = time.monotonic()
+        while True:
+            job = self.job(job_id)
+            if job["status"] in {"completed", "failed", "cancelled"}:
+                return job
+            if timeout_seconds is not None and time.monotonic() - started >= timeout_seconds:
+                raise ProxyaAntyError(f"Timed out waiting for job {job_id}")
+            time.sleep(max(0.05, poll_seconds))
+
     def temporary(self, **spec: Any) -> dict:
         """A profile that deletes itself when its browser closes."""
         spec.setdefault("headless", True)

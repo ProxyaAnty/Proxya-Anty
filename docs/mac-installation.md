@@ -1,12 +1,12 @@
 # Install Proxya Anty on macOS
 
-The 1.0.0 build supports Apple Silicon (M1 and newer). It is ad-hoc signed but
+The 1.0.1 build supports Apple Silicon (M1 and newer). It is ad-hoc signed but
 not notarized with an Apple Developer ID, so Gatekeeper can show “developer
 cannot be verified” or “app is damaged” after download.
 
 ## DMG installation
 
-1. Open `Proxya-Anty_1.0.0_aarch64.dmg`.
+1. Open `Proxya-Anty_1.0.1_aarch64.dmg`.
 2. Drag **Proxya Anty** into **Applications**.
 3. In Terminal run once:
 
@@ -29,8 +29,14 @@ folder. Clear quarantine from the extracted folder:
 xattr -dr com.apple.quarantine ~/Downloads/Proxya\ Anty
 ```
 
-The portable folder contains profiles, cookies and local state. Protect it like
-browser data and do not rename or separate `proxya-data` from the app.
+The portable folder contains profiles, cookies and local state. Secret-bearing
+files are encrypted with a key held by macOS Keychain, so copying the folder to
+another Mac does not transfer account access or proxy passwords. Protect it
+like browser data and do not rename or separate `proxya-data` from the app.
+
+Until the app has a stable Apple Developer ID signature, an update may ask once
+for permission to reuse the previous build's Keychain item. Allow access so the
+new build can read the already encrypted settings.
 
 On first launch the application downloads and verifies the macOS engine. The
 download is about 160 MB compressed.
