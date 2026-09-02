@@ -6,7 +6,7 @@
 
 <p align="center">
   <strong><a href="https://github.com/ProxyaAnty/Proxya-Anty/releases/latest">Download Proxya Anty</a></strong><br>
-  Windows x64 · macOS Apple Silicon
+  Windows x64 · macOS Apple Silicon · Linux x64
 </p>
 
 **Antidetect browser for stable multi-account automation — source-patched
@@ -46,11 +46,11 @@ API.
 
 The release engine is tested on public detection pages and with local
 regression suites. Results describe this exact release, not a universal promise
-about every future website. **Last tested: 29 August 2026 (Chromium 152).**
+about every future website. **Last tested: 2 September 2026 (Chromium 152).**
 
 ### Live detection services
 
-| Detection service or signal | Proxya Anty 1.0.0 | Verification notes |
+| Detection service or signal | Proxya Anty 1.0.1 | Verification notes |
 |---|---|---|
 | [PixelScan](https://pixelscan.net/fingerprint-check) | **PASS** — consistent fingerprint; no automated behavior detected | Windows profile with matching proxy timezone |
 | [BrowserScan](https://www.browserscan.net/) | **PASS** — bot detection: No | Authenticity score also depends on IP, DNS and timezone consistency |
@@ -73,7 +73,7 @@ about every future website. **Last tested: 29 August 2026 (Chromium 152).**
 | MCP contract | 11 / 11 |
 | Node.js SDK | 19 / 19 |
 | Python SDK | 20 / 20 |
-| Rust launcher tests | 123 / 123 |
+| Rust launcher tests | 142 / 142 |
 
 ### Cloudflare Turnstile test
 
@@ -92,7 +92,7 @@ are available at [proxya.co/anty](https://proxya.co/anty).
 |---|---|---|
 | Windows x64 | installer, MSI or portable ZIP | Windows 10/11 |
 | macOS arm64 | DMG or portable ZIP | Apple Silicon (M1 and newer) |
-| Linux x64 | Docker / engine | desktop package follows feedback |
+| Linux x64 | AppImage, DEB or RPM | x86-64 desktop |
 
 The current macOS build is ad-hoc signed. Follow the one-time
 [macOS installation guide](docs/mac-installation.md) if Gatekeeper blocks it

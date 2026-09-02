@@ -109,6 +109,52 @@ export class ProxyaAnty {
     return this.#call("/running");
   }
 
+  // ---- persistent automation queue ----
+  queueStatus() {
+    return this.#call("/jobs/status");
+  }
+  jobs({ status, limit = 200 } = {}) {
+    const query = new URLSearchParams({ limit: String(limit) });
+    if (status) query.set("status", status);
+    return this.#call(`/jobs?${query}`);
+  }
+  enqueueJob(spec) {
+    return this.#call("/jobs", { method: "POST", body: JSON.stringify(spec) });
+  }
+  job(id) {
+    return this.#call(`/jobs/${id}`);
+  }
+  cancelJob(id) {
+    return this.#call(`/jobs/${id}/cancel`, { method: "POST" });
+  }
+  deleteJob(id) {
+    return this.#call(`/jobs/${id}`, { method: "DELETE" });
+  }
+
+  /** Wait without holding an HTTP connection or an operating-system thread. */
+  async waitJob(id, { pollMs = 500, timeoutMs = 0, signal } = {}) {
+    const started = Date.now();
+    for (;;) {
+      if (signal?.aborted) throw signal.reason ?? new Error("Job wait aborted");
+      const job = await this.job(id);
+      if (["completed", "failed", "cancelled"].includes(job.status)) return job;
+      if (timeoutMs > 0 && Date.now() - started >= timeoutMs) {
+        throw new Error(`Timed out waiting for job ${id}`);
+      }
+      await new Promise((resolve, reject) => {
+        const onAbort = () => {
+          clearTimeout(timer);
+          reject(signal.reason ?? new Error("Job wait aborted"));
+        };
+        const timer = setTimeout(() => {
+          signal?.removeEventListener("abort", onAbort);
+          resolve();
+        }, Math.max(50, pollMs));
+        signal?.addEventListener("abort", onAbort, { once: true });
+      });
+    }
+  }
+
   /** A profile that deletes itself when its browser closes. */
   temporary(spec = {}) {
     return this.#call("/profiles/temporary", {
