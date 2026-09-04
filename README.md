@@ -9,7 +9,7 @@
   Windows x64 · macOS Apple Silicon · Linux x64
 </p>
 
-**Antidetect browser for stable multi-account automation — source-patched
+**Free Antidetect browser for stable multi-account automation — source-patched
 Chromium, 168 coherent device fingerprints, proxy-aware profiles, desktop app,
 Node.js and Python SDKs, MCP server, and Docker.**
 
