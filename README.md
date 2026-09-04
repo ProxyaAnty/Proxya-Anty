@@ -46,11 +46,11 @@ API.
 
 The release engine is tested on public detection pages and with local
 regression suites. Results describe this exact release, not a universal promise
-about every future website. **Last tested: 2 September 2026 (Chromium 152).**
+about every future website. **Last tested: 3 September 2026 (Chromium 152).**
 
 ### Live detection services
 
-| Detection service or signal | Proxya Anty 1.0.1 | Verification notes |
+| Detection service or signal | Proxya Anty 1.0.4 | Verification notes |
 |---|---|---|
 | [PixelScan](https://pixelscan.net/fingerprint-check) | **PASS** — consistent fingerprint; no automated behavior detected | Windows profile with matching proxy timezone |
 | [BrowserScan](https://www.browserscan.net/) | **PASS** — bot detection: No | Authenticity score also depends on IP, DNS and timezone consistency |
@@ -61,13 +61,13 @@ about every future website. **Last tested: 2 September 2026 (Chromium 152).**
 | [FingerprintJS OSS](https://fingerprintjs.github.io/fingerprintjs/) | Profile stability check | Visitor ID is checked for stability inside a profile and isolation between profiles |
 | `navigator.webdriver` | **`false`** | Windows, macOS and Linux |
 | reCAPTCHA v3 score | **0.9** | Human score |
-| WebRTC | **No local-address leak** | Public candidate follows the configured proxy |
+| WebRTC | **No local-address leak** | Candidate gathering is disabled whenever a proxy is bound |
 
 ### Release regression suites
 
 | Check | Result |
 |---|---:|
-| Native fingerprint acceptance | 29 / 29 |
+| Native fingerprint acceptance | 43 / 43 |
 | Leak regression suite | 11 / 11 |
 | Local HTTP API | 42 / 42 |
 | MCP contract | 11 / 11 |
