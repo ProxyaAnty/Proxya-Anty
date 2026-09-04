@@ -12,7 +12,7 @@ body:
     id: version
     attributes:
       label: Proxya Anty version
-      placeholder: 1.0.1
+      placeholder: 1.0.4
     validations:
       required: true
   - type: dropdown

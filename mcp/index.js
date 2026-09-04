@@ -115,7 +115,7 @@ async function page(profileId, index) {
   return pages[index];
 }
 
-const server = new McpServer({ name: "proxya-anty", version: "1.0.1" });
+const server = new McpServer({ name: "proxya-anty", version: "1.0.3" });
 
 const profileArg = z.string().describe("Profile id, from list_profiles.");
 const tabArg = z

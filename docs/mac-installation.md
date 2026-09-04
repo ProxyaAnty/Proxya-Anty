@@ -1,12 +1,12 @@
 # Install Proxya Anty on macOS
 
-The 1.0.1 build supports Apple Silicon (M1 and newer). It is ad-hoc signed but
+The 1.0.4 build supports Apple Silicon (M1 and newer). It is ad-hoc signed but
 not notarized with an Apple Developer ID, so Gatekeeper can show “developer
 cannot be verified” or “app is damaged” after download.
 
 ## DMG installation
 
-1. Open `Proxya-Anty_1.0.1_aarch64.dmg`.
+1. Open `Proxya-Anty_1.0.4_aarch64.dmg`.
 2. Drag **Proxya Anty** into **Applications**.
 3. In Terminal run once:
 

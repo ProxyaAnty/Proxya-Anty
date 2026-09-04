@@ -1,6 +1,6 @@
 {
   "name": "proxya-anty-mcp",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "MCP server for Proxya Anty: drives the launcher's local API and a launched profile's browser over DevTools.",
   "keywords": [
     "mcp",
@@ -37,7 +37,7 @@
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.4.0",
     "playwright-core": "^1.49.0",
-    "zod": "^3.23.8"
+    "zod": "^4.5.4"
   },
   "repository": {
     "type": "git",

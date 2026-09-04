@@ -1,6 +1,6 @@
 {
   "name": "proxya-anty",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "Authenticated Node.js SDK for Proxya Anty profiles, proxies, cookies and browser sessions.",
   "keywords": [
     "anti-detect",
