@@ -1,5 +1,24 @@
 # Changelog
 
+## 1.0.5 — 2026-09-05
+
+- The profile editor now shows the identity it is about to create beside the
+  form: platform, user agent, proxy, timezone, language, geolocation, hardware
+  and every masked surface, updated as the form changes.
+- Added two ways to draw a device — one that reaches across the whole library,
+  and one that keeps to hardware resembling the machine the profile runs on.
+  Neither can produce the graphics card actually installed there.
+- The proxy a profile is bound to is now checked while the profile is being
+  made, so its exit address, location and whether it carries UDP are known
+  before the profile is created rather than after.
+- Proxies now report the operating system and network path of their exit, in
+  the proxy list and beside every profile bound to one.
+- Added an optional page on launch that states where the profile comes out and
+  warns when its timezone does not belong to that exit.
+- Location and timezone for a proxy exit are now resolved through Proxya's own
+  service by default.
+- Settings and the profile list were reorganised around what is used most.
+
 ## 1.0.4 — 2026-09-04
 
 - Added WebRTC support for profiles bound to a proxy: candidates report the
