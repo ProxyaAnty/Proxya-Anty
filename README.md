@@ -37,6 +37,12 @@ API.
 - **168 curated fingerprints** — 118 Windows, 31 macOS and 19 Linux profiles.
 - **Persistent multi-account profiles** — isolated cookies, storage and proxy.
 - **Proxy consistency** — timezone and network-facing settings follow the exit.
+- **Extensions** — from a Web Store link, a `.crx`, a `.zip` or a folder, loaded
+  per profile, with each profile carrying its own copy.
+- **Measured exits** — a proxy reports the operating system and network path of
+  the machine its packets leave from, not just its address and country.
+- **The identity before you commit to it** — the editor shows the profile it is
+  about to create, so a contradiction is visible while it is being made.
 - **Automation-ready** — authenticated local API, Node.js, Python and 39 MCP
   tools for profiles and browser control.
 - **Three engine platforms** — Windows x64, macOS Apple Silicon and Linux x64.
@@ -46,11 +52,11 @@ API.
 
 The release engine is tested on public detection pages and with local
 regression suites. Results describe this exact release, not a universal promise
-about every future website. **Last tested: 3 September 2026 (Chromium 152).**
+about every future website. **Last tested: 5 September 2026 (Chromium 152).**
 
 ### Live detection services
 
-| Detection service or signal | Proxya Anty 1.0.4 | Verification notes |
+| Detection service or signal | Proxya Anty 1.0.6 | Verification notes |
 |---|---|---|
 | [PixelScan](https://pixelscan.net/fingerprint-check) | **PASS** — consistent fingerprint; no automated behavior detected | Windows profile with matching proxy timezone |
 | [BrowserScan](https://www.browserscan.net/) | **PASS** — bot detection: No | Authenticity score also depends on IP, DNS and timezone consistency |
@@ -73,7 +79,7 @@ about every future website. **Last tested: 3 September 2026 (Chromium 152).**
 | MCP contract | 11 / 11 |
 | Node.js SDK | 19 / 19 |
 | Python SDK | 20 / 20 |
-| Rust launcher tests | 142 / 142 |
+| Rust launcher tests | 150 / 150 |
 
 ### Cloudflare Turnstile test
 

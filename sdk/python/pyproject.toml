@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "proxya-anty"
-version = "1.0.4"
+version = "1.0.6"
 description = "Control the Proxya Anty desktop application from Python."
 readme = "README.md"
 license = { file = "LICENSE" }
