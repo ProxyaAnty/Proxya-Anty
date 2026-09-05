@@ -37,6 +37,9 @@ API.
 - **168 curated fingerprints** — 118 Windows, 31 macOS and 19 Linux profiles.
 - **Persistent multi-account profiles** — isolated cookies, storage and proxy.
 - **Proxy consistency** — timezone and network-facing settings follow the exit.
+- **QUIC and WebRTC through a SOCKS5 proxy** — UDP is carried over the proxy's
+  own relay, so HTTP/3 works and WebRTC candidates report the exit. Where a
+  proxy has no UDP path, nothing is gathered rather than leaking around it.
 - **Extensions** — from a Web Store link, a `.crx`, a `.zip` or a folder, loaded
   per profile, with each profile carrying its own copy.
 - **Measured exits** — a proxy reports the operating system and network path of
