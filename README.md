@@ -37,6 +37,8 @@ API.
 - **168 curated fingerprints** — 118 Windows, 31 macOS and 19 Linux profiles.
 - **Persistent multi-account profiles** — isolated cookies, storage and proxy.
 - **Proxy consistency** — timezone and network-facing settings follow the exit.
+- **Extensions** — from a Web Store link, a `.crx`, a `.zip` or a folder, loaded
+  per profile, with each profile carrying its own copy.
 - **Measured exits** — a proxy reports the operating system and network path of
   the machine its packets leave from, not just its address and country.
 - **The identity before you commit to it** — the editor shows the profile it is
@@ -54,7 +56,7 @@ about every future website. **Last tested: 5 September 2026 (Chromium 152).**
 
 ### Live detection services
 
-| Detection service or signal | Proxya Anty 1.0.5 | Verification notes |
+| Detection service or signal | Proxya Anty 1.0.6 | Verification notes |
 |---|---|---|
 | [PixelScan](https://pixelscan.net/fingerprint-check) | **PASS** — consistent fingerprint; no automated behavior detected | Windows profile with matching proxy timezone |
 | [BrowserScan](https://www.browserscan.net/) | **PASS** — bot detection: No | Authenticity score also depends on IP, DNS and timezone consistency |

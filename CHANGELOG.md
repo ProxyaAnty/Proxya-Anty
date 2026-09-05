@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.0.6 — 2026-09-05
+
+- Added an extension library. Add one from a Chrome Web Store link, a `.crx`,
+  a `.zip` or a folder, then choose which profiles load it. Name, version,
+  description and icon are read from the extension itself, so the list shows
+  what the browser will load.
+- Each profile loads its own copy of an extension, so the same extension is a
+  different one in every profile as far as a website can tell.
+
 ## 1.0.5 — 2026-09-05
 
 - The profile editor now shows the identity it is about to create beside the
