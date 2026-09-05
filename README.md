@@ -51,6 +51,10 @@ API.
 - **Three engine platforms** — Windows x64, macOS Apple Silicon and Linux x64.
 - **Integrity first** — Ed25519-signed engine manifest plus per-file SHA-256.
 
+<p align="center">
+  <img src="public/screenshots/profiles.png" alt="The profile list: each profile with its device, its proxy exit and when it last ran">
+</p>
+
 ## Detection checks
 
 The release engine is tested on public detection pages and with local
