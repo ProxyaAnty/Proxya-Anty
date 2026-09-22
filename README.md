@@ -63,7 +63,7 @@ about every future website. **Last tested: 5 September 2026 (Chromium 152).**
 
 ### Live detection services
 
-| Detection service or signal | Proxya Anty 1.0.6 | Verification notes |
+| Detection service or signal | Proxya Anty 1.0.7 | Verification notes |
 |---|---|---|
 | [PixelScan](https://pixelscan.net/fingerprint-check) | **PASS** — consistent fingerprint; no automated behavior detected | Windows profile with matching proxy timezone |
 | [BrowserScan](https://www.browserscan.net/) | **PASS** — bot detection: No | Authenticity score also depends on IP, DNS and timezone consistency |

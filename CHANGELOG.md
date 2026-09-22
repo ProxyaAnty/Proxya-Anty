@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.7 — 2026-09-22
+
+- Fixed engine installation on macOS. On 1.0.6 the first-run download ended
+  with "verified archive does not contain the expected browser binary" and
+  no profile could start; Windows and Linux were not affected.
+- When an engine archive is rejected, the message now says what it held
+  instead of only what was expected.
+
 ## 1.0.6 — 2026-09-05
 
 - Added an extension library. Add one from a Chrome Web Store link, a `.crx`,
